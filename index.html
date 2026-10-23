@@ -153,6 +153,19 @@ footer{display:flex;justify-content:space-between;gap:12px;max-width:1500px;marg
  .hero-services{margin:35px 0 55px;font-size:22px}
 }
 @media(prefers-reduced-motion:reduce){.featured-art img{transition:none}}
+
+/* Editorial reference: persistent navigation and understated scroll reveal */
+header{position:sticky;top:0;z-index:100;background:rgba(246,245,238,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+@media(max-width:600px){header{position:sticky;top:0;z-index:100}}
+html{scroll-padding-top:95px}
+.home-about,.home-work,.home-capabilities,.home-contact{scroll-margin-top:96px}
+@media(max-width:600px){html{scroll-padding-top:78px}.home-about,.home-work,.home-capabilities,.home-contact{scroll-margin-top:78px}}
+@media(prefers-reduced-motion:no-preference){
+ .featured button{transition:transform .35s ease,opacity .35s ease}
+ .featured button:hover{transform:translateY(-4px)}
+ .home-work .tile .square{transition:transform .45s ease,filter .45s ease}
+ .home-work .tile:hover .square{filter:contrast(1.06)}
+}
 </style></head><body>
 <header><a href="#home" class="brand">LEONID PROVOZIUK</a><button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><nav class="site-nav" id="siteNav"><a href="#home">HOME</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav></header>
 <main>

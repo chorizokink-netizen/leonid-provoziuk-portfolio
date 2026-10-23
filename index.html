@@ -187,8 +187,57 @@ html{scroll-padding-top:95px}
 }
 .project-wrap{min-width:0}.project-wrap .tile{width:100%}.case-link{display:inline-block;margin:12px 0 30px;font-size:10px;letter-spacing:.07em;text-decoration:underline;text-underline-offset:4px}.project-wrap .square{width:100%}
 @media(max-width:600px){.case-link{font-size:9px;margin:8px 0 22px}}
+
+/* 2026 editorial refinement — inspired by the family reference, preserving Leonid's work */
+:root{--paper:#f6f5ee;--ink:#22211d}
+html{scroll-behavior:smooth}
+body{background:var(--paper)}
+.site-nav a{position:relative;text-underline-offset:5px}
+.site-nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:1px}
+#home .home-hero{position:relative}
+#home h1{font-weight:400;text-wrap:balance}
+#home .home-kicker{letter-spacing:.07em}
+.home-work .section-heading{margin-bottom:clamp(34px,5vw,82px)}
+#home .projects{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,2.5vw,34px);row-gap:clamp(48px,8vw,120px);align-items:start}
+#home .project-wrap{grid-column:span 6;min-width:0}
+#home .project-wrap:nth-child(4n+2){grid-column:span 5;margin-top:clamp(45px,8vw,125px)}
+#home .project-wrap:nth-child(4n+3){grid-column:span 5;margin-top:clamp(10px,3vw,45px)}
+#home .project-wrap:nth-child(4n+4){grid-column:span 6;margin-top:clamp(45px,7vw,100px)}
+#home .project-wrap:nth-child(7){grid-column:span 8}
+#home .project-wrap .square{aspect-ratio:4/5;object-fit:cover;background:#e9e7df;transition:transform .5s ease}
+#home .project-wrap:nth-child(3n+2) .square{aspect-ratio:5/4}
+#home .project-wrap:nth-child(3n+3) .square{aspect-ratio:1/1}
+#home .project-wrap:nth-child(7) .square{aspect-ratio:16/10}
+#home .tile{overflow:hidden}
+#home .tile:hover .square{transform:scale(1.015)}
+#home .tile .meta{padding-top:14px;align-items:baseline;gap:20px}
+#home .tile .meta span:first-child{font-weight:500}
+#home .case-link{text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px;transition:opacity .2s ease}
+#home .case-link:hover{opacity:.55}
+.home-contact>a{border-bottom:1px solid currentColor;padding-bottom:6px}
+.site-nav a:focus-visible,.case-link:focus-visible,.mobile-menu-toggle:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+@media(max-width:860px){
+ #home .projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 22px}
+ #home .project-wrap,#home .project-wrap:nth-child(n){grid-column:auto;margin-top:0}
+ #home .project-wrap:nth-child(2n){margin-top:65px}
+ #home .project-wrap:nth-child(7){grid-column:1/-1;max-width:76%}
+}
+@media(max-width:600px){
+ #home .projects{grid-template-columns:minmax(0,1fr);row-gap:58px}
+ #home .project-wrap,#home .project-wrap:nth-child(n){grid-column:1;margin-top:0;max-width:100%}
+ #home .project-wrap:nth-child(even){margin-left:clamp(20px,8vw,42px)}
+ #home .project-wrap:nth-child(odd){margin-right:clamp(18px,7vw,38px)}
+ #home .project-wrap:nth-child(7){max-width:100%}
+ #home .project-wrap .square{aspect-ratio:4/5}
+ #home .project-wrap:nth-child(3n+2) .square{aspect-ratio:5/4}
+ #home .project-wrap:nth-child(7) .square{aspect-ratio:4/5}
+ #home .tile .meta{font-size:11px;flex-wrap:wrap;gap:4px}
+ .site-nav.open{box-shadow:0 18px 30px rgba(0,0,0,.04)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#home .project-wrap .square{transition:none}}
+
 </style></head><body>
-<header><a href="#home" class="brand">LEONID PROVOZIUK</a><button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><nav class="site-nav" id="siteNav"><a href="#home">HOME</a><a href="work/all/">WORK</a><a href="about/">ABOUT</a><a href="contact/">CONTACT</a></nav></header>
+<header><a href="#home" class="brand">LEONID PROVOZIUK</a><button class="mobile-menu-toggle" type="button" aria-controls="siteNav" id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><nav class="site-nav" id="siteNav" aria-label="Main navigation"><a href="#home">HOME</a><a href="work/all/">WORK</a><a href="about/">ABOUT</a><a href="contact/">CONTACT</a></nav></header>
 <main>
 <section id="home">
 <div class="home-kicker"><span>POZNAŃ</span><span>INDEPENDENT DESIGNER · 2026</span></div>
@@ -203,9 +252,9 @@ html{scroll-padding-top:95px}
 </main><footer><span>LEONID PROVOZIUK</span><span>Brand / Digital / Motion</span><span>© 2026</span></footer>
 <script>const DATA=[{"slug": "wedding", "title": "Wedding Editorial", "category": "Editorial / Presentation", "cover": "assets/Figma_Ready_HiRes/COVER_SQUARE_01_Wedding_RETOUCHED.webp", "intro": "A curated exploration of wedding atmospheres, considered styling and refined celebrations.", "slides": ["assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_01_RETOUCHED.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_02.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_03.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_04.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_05.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_06.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_07.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_08.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_09.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_10.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_11.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_12.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_13.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_14.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_15.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_16.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_17.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_18.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_19.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_20.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_21.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_22.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_23.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_24.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_25.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_26.webp", "assets/Figma_Ready_HiRes/Wedding_Full_Gallery_27/slide_27.webp"]}, {"slug": "lintu", "title": "Lintu", "category": "Web / Digital", "cover": "assets/Figma_Ready_HiRes/COVER_SQUARE_02_Lintu.webp", "intro": "A digital experience for intelligent drone delivery, presented through focused landscape case-study boards.", "slides": ["assets/Figma_Ready_HiRes/Lintu_Landscape_Slides_6/slide_01_RETOUCHED.webp", "assets/Figma_Ready_HiRes/Lintu_Landscape_Slides_6/slide_02.webp", "assets/Figma_Ready_HiRes/Lintu_Landscape_Slides_6/slide_03.webp", "assets/Figma_Ready_HiRes/Lintu_Landscape_Slides_6/slide_04.webp", "assets/Figma_Ready_HiRes/Lintu_Landscape_Slides_6/slide_05.webp", "assets/Figma_Ready_HiRes/Lintu_Landscape_Slides_6/slide_06.webp"]}, {"slug": "skvot", "title": "Skvot", "category": "Campaign / Digital", "cover": "assets/Figma_Ready_HiRes/COVER_SQUARE_03_Skvot.webp", "intro": "A complete campaign presented in six readable sections, preserving the original artwork and proportions.", "slides": ["assets/Skvot_Gallery_6/panel_01.webp", "assets/Skvot_Gallery_6/panel_02.webp", "assets/Skvot_Gallery_6/panel_03.webp", "assets/Skvot_Gallery_6/panel_04.webp", "assets/Skvot_Gallery_6/panel_05.webp", "assets/Skvot_Gallery_6/panel_06.webp"]}, {"slug": "rings", "title": "Jewelry Rings", "category": "Motion / Film", "cover": "assets/Figma_Ready_HiRes/COVER_SQUARE_04_Jewelry_Rings.webp", "intro": "Original jewelry motion project.", "video": "assets/jewelry.mp4", "poster": "assets/Figma_Ready_HiRes/Jewelry_Rings_poster_original.webp"}, {"slug": "aura", "title": "Aura", "category": "Motion / Film", "cover": "assets/Figma_Ready_HiRes/COVER_SQUARE_05_Aura.webp", "intro": "Original motion film. Video is the primary work; the poster serves only as a cover.", "video": "assets/aura.mp4", "poster": "assets/Figma_Ready_HiRes/Aura_poster_original.webp"}, {"slug": "volterra", "title": "Volterra", "category": "Web / UI", "cover": "assets/Figma_Ready_HiRes/COVER_SQUARE_06_Volterra.webp", "intro": "An industrial digital design concept shown across responsive desktop, tablet and phone formats.", "slides": ["assets/volterra_cover.webp", "assets/volterra_desktop.webp", "assets/volterra_responsive.webp"]}, {"slug": "hempire", "title": "Hempire Collective", "category": "Campaign / Art Direction", "cover": "assets/Figma_Ready_HiRes/COVER_SQUARE_07_Hempire.webp", "intro": "Original high-resolution campaign visuals, shown one banner at a time.", "slides": ["assets/hempire_v1_01.webp", "assets/hempire_v1_02.webp", "assets/hempire_v1_03.webp", "assets/hempire_v1_04.webp", "assets/hempire_v1_05.webp"]}];
 let current=null,slide=0,homeScrollY=0;const $=x=>document.getElementById(x);
-function showHome(){if(!current)return;if(videoObserver){videoObserver.disconnect();videoObserver=null;}const oldVideo=$('viewer').querySelector('video');if(oldVideo)oldVideo.pause();current=null;history.pushState({view:'home'},'','#home');$('home').hidden=false;$('detail').hidden=true;requestAnimationFrame(()=>{window.scrollTo({top:homeScrollY,behavior:'instant'});document.querySelector('#grid').setAttribute('tabindex','-1');document.querySelector('#grid').focus({preventScroll:true})})}
-function openProject(id){let p=DATA.find(x=>x.slug===id);if(!p)return;if(!current)homeScrollY=window.scrollY;if(videoObserver){videoObserver.disconnect();videoObserver=null;}current=p;slide=0;history.pushState({view:id},'','#'+id);$('home').hidden=true;$('detail').hidden=false;$('heading').textContent=p.title;$('category').textContent=p.category;$('description').textContent=p.intro;render();if(p.video){requestAnimationFrame(()=>{const video=$('viewer').querySelector('video');if(video){$('viewer').scrollIntoView({behavior:'instant',block:'start'});video.play().catch(()=>{});}})}else{window.scrollTo(0,0)}}
-window.addEventListener('popstate',()=>{const slug=location.hash.slice(1);if(DATA.some(p=>p.slug===slug)){openProject(slug)}else if(current){showHome()}else{const target=document.querySelector(location.hash||'#home');if(target)target.scrollIntoView({block:'start'})}});
+function showHome(fromHistory=false){if(!current)return;if(videoObserver){videoObserver.disconnect();videoObserver=null;}const oldVideo=$('viewer').querySelector('video');if(oldVideo)oldVideo.pause();current=null;if(!fromHistory)history.pushState({view:'home'},'','#home');$('home').hidden=false;$('detail').hidden=true;requestAnimationFrame(()=>{window.scrollTo({top:homeScrollY,behavior:'instant'});document.querySelector('#grid').setAttribute('tabindex','-1');document.querySelector('#grid').focus({preventScroll:true})})}
+function openProject(id,fromHistory=false){let p=DATA.find(x=>x.slug===id);if(!p)return;if(!current)homeScrollY=window.scrollY;if(videoObserver){videoObserver.disconnect();videoObserver=null;}current=p;slide=0;if(!fromHistory)history.pushState({view:id},'','#'+id);$('home').hidden=true;$('detail').hidden=false;$('heading').textContent=p.title;$('category').textContent=p.category;$('description').textContent=p.intro;render();if(p.video){requestAnimationFrame(()=>{const video=$('viewer').querySelector('video');if(video){$('viewer').scrollIntoView({behavior:'instant',block:'start'});video.play().catch(()=>{});}})}else{window.scrollTo(0,0)}}
+window.addEventListener('popstate',()=>{const slug=location.hash.slice(1);if(DATA.some(p=>p.slug===slug)){openProject(slug,true)}else if(current){showHome(true)}else{const target=document.querySelector(location.hash||'#home');if(target)target.scrollIntoView({block:'start'})}});
 let videoObserver=null;function setupScrollAutoplay(vid){if(videoObserver)videoObserver.disconnect();videoObserver=new IntersectionObserver(entries=>{for(const e of entries){if(e.target!==vid)return;if(e.isIntersecting&&e.intersectionRatio>=0.55){vid.muted=true;vid.play().catch(()=>{});}else{vid.pause();}}},{threshold:[0,.55,.8]});videoObserver.observe(vid);vid.addEventListener('ended',()=>{vid.pause()});}
 function render(){let p=current;if(!p)return;const v=$('viewer');v.replaceChildren();const pr=$('preview');pr.replaceChildren();$('explore').hidden=!!p.video;v.className='viewer'+(p.video?' video':'');$('thumbnails').replaceChildren();$('controls').hidden=!!p.video;
  if(p.video){pr.hidden=true;let vid=document.createElement('video');vid.src=p.video;vid.controls=true;vid.playsInline=true;vid.muted=true;vid.defaultMuted=true;vid.autoplay=true;vid.loop=false;vid.preload='auto';vid.poster=p.poster||p.cover;vid.setAttribute('aria-label',p.title+' original video');v.append(vid);setupScrollAutoplay(vid);$('counter').textContent='ORIGINAL VIDEO';$('note').textContent='Original motion project · Tap the player to enable sound.';return}

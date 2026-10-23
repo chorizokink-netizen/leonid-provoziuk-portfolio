@@ -52,14 +52,41 @@ header{max-width:1500px;margin:auto;border-bottom:0;padding-top:27px;padding-bot
 .home-contact>p{font-family:var(--serif);font-size:clamp(40px,6vw,90px);line-height:1.05}.home-contact>a{display:inline-block;margin-top:25px;font-size:17px;text-decoration:none}
 footer{display:flex;justify-content:space-between;gap:12px;max-width:1500px;margin:auto}
 @media(max-width:600px){header{padding:20px 22px}.site-nav{gap:14px;font-size:10px}.site-nav a:nth-child(3),.site-nav a:nth-child(4){display:none}main{padding:0 22px 40px}#home .home-kicker{margin:8px 0 48px}#home h1{font-size:38px;line-height:1.01;margin-bottom:130px}.featured{gap:12px}.featured img{height:140px}.featured small,.featured span{font-size:10px}.hero-services{font-size:31px;margin:42px 0 85px}.section-heading{margin-bottom:35px}.section-heading span{font-size:11px}#home h2{font-size:43px}.home-about,.home-work,.home-capabilities,.home-contact{padding-bottom:75px}.about-content{grid-template-columns:1fr;gap:28px}.about-art{aspect-ratio:4/4;font-size:55px}.about-copy p{font-size:37px}.about-copy a{margin-top:40px}#home .projects{grid-template-columns:1fr;gap:55px}#home .tile .square{aspect-ratio:auto;max-height:480px;object-fit:contain}#home .tile .meta{font-size:12px}.cap-lines p{font-size:42px}.home-contact>p{font-size:43px}footer{font-size:9px;padding:18px 22px}}
+
+:root{--bg:#f6f5ee;--ink:#22211d;--muted:#87857d}
+.mobile-menu-toggle{display:none}
+#home .home-kicker{margin-top:18px}
+#home h1{max-width:920px}
+#home .featured img{object-fit:contain}
+.about-art{background:#e3e0d6;color:#78766f;align-items:center;text-align:center}
+.about-art span{font-size:11px;letter-spacing:.1em;line-height:1.8;margin:0;max-width:180px}
+@media(max-width:600px){
+ header{height:72px;padding:20px 22px;position:relative}
+ header .brand{font-size:11px;letter-spacing:0}
+ .mobile-menu-toggle{display:flex;flex-direction:column;gap:7px;justify-content:center;width:31px;height:30px;padding:4px}
+ .mobile-menu-toggle span{height:1px;background:#22211d;width:20px}
+ .site-nav{display:none;position:absolute;z-index:20;top:72px;left:0;right:0;background:var(--bg);padding:28px 22px 36px;border-bottom:1px solid var(--hair);flex-direction:column;gap:22px;font-size:17px}
+ .site-nav.open{display:flex}.site-nav a:nth-child(3),.site-nav a:nth-child(4){display:block}
+ #home .home-kicker{margin:19px 0 48px}
+ #home h1{font-size:38px;line-height:1.01;letter-spacing:-1.2px;margin:0 0 185px}
+ .featured{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .featured img{height:139px;object-fit:contain}
+ .featured small{margin:0 0 11px}
+ .featured span{display:block;margin-top:10px}
+ .hero-services{font-size:25px;line-height:1.17;margin:38px 0 75px}
+ .section-heading{padding-top:18px}
+ .home-about .about-art{aspect-ratio:346/430}
+ .home-about .about-copy p{font-size:38px}
+ .home-contact>p{font-size:42px}
+}
 </style></head><body>
-<header><a href="#home" class="brand">LEONID PROVOZIUK</a><nav class="site-nav"><a href="#home">HOME</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav></header>
+<header><a href="#home" class="brand">LEONID PROVOZIUK</a><button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button><nav class="site-nav" id="siteNav"><a href="#home">HOME</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav></header>
 <main>
 <section id="home">
 <div class="home-kicker"><span>POZNAŃ</span><span>INDEPENDENT DESIGNER · 2026</span></div>
 <section class="home-hero"><h1>Leonid Provoziuk. I design identities, digital experiences, campaigns and moving images with character, clarity and a thoughtful editorial eye.</h1>
 <div class="featured" id="featured"></div><div class="hero-services">Brand &amp; Packaging<br>Web &amp; UI<br>Campaigns<br>Motion &amp; 3D</div></section>
-<section class="home-about" id="about"><div class="section-heading"><h2>About</h2><span>(About.)</span></div><div class="about-content"><div class="about-art">LEONID<br>PROVOZIUK<span>INDEPENDENT DESIGNER</span></div><div class="about-copy"><p>Design with character, clarity and a thoughtful editorial eye.</p><a href="#contact">Discover more ↗</a></div></div></section>
+<section class="home-about" id="about"><div class="section-heading"><h2>About</h2><span>(About.)</span></div><div class="about-content"><div class="about-art" role="img" aria-label="Editorial portrait pending approved source photograph"><span>PORTRAIT / SOURCE PHOTO REQUIRED</span></div><div class="about-copy"><p>Design with character, clarity and a thoughtful editorial eye.</p><a href="#contact">Discover more ↗</a></div></div></section>
 <section class="home-work" id="work"><div class="section-heading"><h2>Selected work</h2><span>(Portfolio.)</span></div><div class="projects" id="grid"></div></section>
 <section class="home-capabilities"><div class="section-heading"><h2>Capabilities</h2><span>(Practice.)</span></div><div class="cap-lines"><p>Brand &amp; Packaging</p><p>Web &amp; UI</p><p>Campaigns</p><p>Motion &amp; 3D</p></div></section>
 <section class="home-contact" id="contact"><div class="section-heading"><h2>Inquiries</h2><span>(Contact.)</span></div><p>Have a project in mind?<br>Let's make something with character.</p><a href="mailto:provoziukleonid@gmail.com">LET’S COLLABORATE ↗</a></section>
@@ -78,6 +105,6 @@ $('featured').replaceChildren();DATA.slice(0,3).forEach((p,i)=>{let b=document.c
 $('previous').onclick=()=>{if(current&&!current.video&&slide>0){slide--;render()}};
 $('next').onclick=()=>{if(current&&!current.video&&slide<current.slides.length-1){slide++;render()}};
 $('explore').onclick=()=>{$('viewer').scrollIntoView({behavior:'smooth',block:'center'});};$('back').onclick=showHome;document.querySelector('header .brand').onclick=e=>{e.preventDefault();showHome()};
-document.addEventListener('keydown',e=>{if(!current)return;if(e.key==='Escape'){e.preventDefault();showHome();return}if(current.video)return;if(e.key==='ArrowRight'&&slide<current.slides.length-1){slide++;render()}if(e.key==='ArrowLeft'&&slide>0){slide--;render()}});
+$('mobileMenuToggle').onclick=()=>{const nav=$('siteNav');const open=nav.classList.toggle('open');$('mobileMenuToggle').setAttribute('aria-expanded',String(open));$('mobileMenuToggle').setAttribute('aria-label',open?'Close navigation':'Open navigation')};document.querySelectorAll('#siteNav a').forEach(a=>a.addEventListener('click',()=>{$('siteNav').classList.remove('open');$('mobileMenuToggle').setAttribute('aria-expanded','false')}));document.addEventListener('keydown',e=>{if(!current)return;if(e.key==='Escape'){e.preventDefault();showHome();return}if(current.video)return;if(e.key==='ArrowRight'&&slide<current.slides.length-1){slide++;render()}if(e.key==='ArrowLeft'&&slide>0){slide--;render()}});
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(DATA.some(p=>p.slug===h))openProject(h);else if(current)showHome();if(['work','about','contact'].includes(h))setTimeout(()=>document.getElementById(h)?.scrollIntoView(),40)});let start=location.hash.slice(1);if(DATA.some(p=>p.slug===start))openProject(start);else {$('home').hidden=false;$('detail').hidden=true;}
 </script></body></html>
